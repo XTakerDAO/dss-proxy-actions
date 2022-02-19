@@ -457,7 +457,7 @@ contract DssProxyActions is Common {
         GemJoinLike(ethJoin).gem().withdraw(wad);
     }
 
-    function freeETH2(address ethJoin, uint wad) public {
+    function freeETH2(uint wad) public {
         msg.sender.transfer(wad);
     }
 
