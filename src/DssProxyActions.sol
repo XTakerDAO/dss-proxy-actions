@@ -448,6 +448,18 @@ contract DssProxyActions is Common {
         // Sends ETH back to the user's wallet
         msg.sender.transfer(wad);
     }
+	
+	function freeETH0(address ethJoin, uint wad) public {
+        GemJoinLike(ethJoin).exit(address(this), wad);
+    }
+
+    function freeETH1(address ethJoin, uint wad) public {
+        GemJoinLike(ethJoin).gem().withdraw(wad);
+    }
+
+    function freeETH2(address ethJoin, uint wad) public {
+        msg.sender.transfer(wad);
+    }
 
     function freeGem(
         address manager,
