@@ -446,7 +446,7 @@ contract DssProxyActions is Common {
         // Converts WETH to ETH
         GemJoinLike(ethJoin).gem().withdraw(wad);
         // Sends ETH back to the user's wallet
-        msg.sender.transfer(wad);
+        payable(msg.sender).transfer(wad);
     }
 	
 	function freeETH0(address ethJoin, uint wad) public {
@@ -458,7 +458,7 @@ contract DssProxyActions is Common {
     }
 
     function freeETH2(uint wad) public {
-        msg.sender.transfer(wad);
+        payable(msg.sender).transfer(wad);
     }
 
     function freeGem(
@@ -490,7 +490,7 @@ contract DssProxyActions is Common {
         // Converts WETH to ETH
         GemJoinLike(ethJoin).gem().withdraw(wad);
         // Sends ETH back to the user's wallet
-        msg.sender.transfer(wad);
+        payable(msg.sender).transfer(wad);
     }
 
     function exitGem(
@@ -733,7 +733,7 @@ contract DssProxyActions is Common {
         // Converts WETH to ETH
         GemJoinLike(ethJoin).gem().withdraw(wadC);
         // Sends ETH back to the user's wallet
-        msg.sender.transfer(wadC);
+        payable(msg.sender).transfer(wadC);
     }
 
     function wipeAllAndFreeETH(
@@ -764,7 +764,7 @@ contract DssProxyActions is Common {
         // Converts WETH to ETH
         GemJoinLike(ethJoin).gem().withdraw(wadC);
         // Sends ETH back to the user's wallet
-        msg.sender.transfer(wadC);
+        payable(msg.sender).transfer(wadC);
     }
 
     function wipeAndFreeGem(
@@ -863,7 +863,7 @@ contract DssProxyActionsEnd is Common {
         // Converts WETH to ETH
         GemJoinLike(ethJoin).gem().withdraw(wad);
         // Sends ETH back to the user's wallet
-        msg.sender.transfer(wad);
+        payable(msg.sender).transfer(wad);
     }
 
     function freeGem(
@@ -904,7 +904,7 @@ contract DssProxyActionsEnd is Common {
         // Converts WETH to ETH
         GemJoinLike(ethJoin).gem().withdraw(wadC);
         // Sends ETH back to the user's wallet
-        msg.sender.transfer(wadC);
+        payable(msg.sender).transfer(wadC);
     }
 
     function cashGem(
